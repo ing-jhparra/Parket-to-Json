@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 # Definicon de Rutas y nombre de archvios
 input_path = 'C:\\Users\\Jesus\\Documents\\proyectos\\Parket-to-Json\\input\\'
@@ -10,8 +11,10 @@ archivo_json = open (output_path + output_file,'w')
 
 def convertir_clave_valor(tupla):
     clave, valor = tupla
-    if type(valor) == 
-    return f"'{clave}':'{valor}'"
+    if type(valor) in  (np.int64,np.float64):
+        return f"'{clave}':{valor}"
+    else :
+        return f"'{clave}':'{valor}'"
 
 # Lee el archvio parquet y lo convierte en un DataFrame
 df = pd.read_parquet(input_path + input_file)
@@ -20,7 +23,7 @@ columnas = df.columns
 # Construccion de una lista de colecciones a partid del DataFrame
 colecciones = list()
 for fila in range(len(df)):
-    colecciones.append([convertir_clave_valor((columnas[columna], str(df.iloc[fila,columna]))) for columna in range(len(columnas))])
+    colecciones.append([convertir_clave_valor((columnas[columna], df.iloc[fila,columna])) for columna in range(len(columnas))])
 
 # Construccion del archivo json
 archivo_json.write("[  \r")
