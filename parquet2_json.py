@@ -12,9 +12,9 @@ archivo_json = open (output_path + output_file,'w')
 def convertir_clave_valor(tupla):
     clave, valor = tupla
     if type(valor) in  (np.int64,np.float64):
-        return f"'{clave}':{valor}"
+        return f'"{clave}":{valor}'
     else :
-        return f"'{clave}':'{valor}'"
+        return f'"{clave}":"{valor}"'
 
 # Lee el archvio parquet y lo convierte en un DataFrame
 df = pd.read_parquet(input_path + input_file)
@@ -26,17 +26,17 @@ for fila in range(len(df)):
     colecciones.append([convertir_clave_valor((columnas[columna], df.iloc[fila,columna])) for columna in range(len(columnas))])
 
 # Construccion del archivo json
-archivo_json.write("[  \r")
+archivo_json.write("[\r")
 for indice, coleccion in enumerate(colecciones):
-    archivo_json.write("  {\r")
+    archivo_json.write("\t{\r")
     for columna in range(len(coleccion)):
         if columna == len(coleccion) - 1:
-            archivo_json.write("   " + coleccion[columna] + "\r")
+            archivo_json.write("\t\t" + coleccion[columna] + "\r")
         else :
-            archivo_json.write("   " + coleccion[columna] + ",\r")
+            archivo_json.write("\t\t" + coleccion[columna] + ",\r")
     if indice == len(colecciones) - 1:
-        archivo_json.write("  }\r")
+        archivo_json.write("\t}\r")
     else :
-        archivo_json.write("  },\r")
+        archivo_json.write("\t},\r")
 archivo_json.write("]  \r")
 archivo_json.close()
