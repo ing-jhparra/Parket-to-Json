@@ -1,0 +1,23 @@
+
+ El volumen de la unidad C no tiene etiqueta.
+ El n£mero de serie del volumen es: CAA6-02D8
+
+ Directorio de C:\Users\Jesus\Documents\proyectos\Parket-to-Json
+
+12/04/2024  08:50 a.ÿm.    <DIR>          .
+12/04/2024  08:50 a.ÿm.    <DIR>          ..
+12/04/2024  08:50 a.ÿm.                 3 .gitignore
+11/04/2024  04:23 p.ÿm.           152.088 archivo.json
+11/04/2024  03:39 p.ÿm.    <DIR>          Include
+11/04/2024  04:12 p.ÿm.    <DIR>          input
+11/04/2024  09:22 p.ÿm.    <DIR>          json_ejemplo
+11/04/2024  03:39 p.ÿm.    <DIR>          Lib
+11/04/2024  09:22 p.ÿm.    <DIR>          output
+11/04/2024  10:08 p.ÿm.             1.412 parquet2_json.py
+11/04/2024  10:08 p.ÿm.             6.380 pruebas.ipynb
+11/04/2024  03:39 p.ÿm.               475 pyvenv.cfg
+11/04/2024  03:38 p.ÿm.                76 README.md
+11/04/2024  05:51 p.ÿm.    <DIR>          Scripts
+11/04/2024  05:51 p.ÿm.    <DIR>          share
+               6 archivos        160.434 bytes
+               9 dirs  13.370.499.072 bytes libres
